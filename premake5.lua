@@ -126,7 +126,7 @@ function get_hip_sdk_verion()
 	os.remove (tmpFile)
 
     if version == nil or version == '' then
-        version = "HIP_SDK_NOT_FOUND"
+        version = "5.5"
     end
 
 	return version
@@ -271,8 +271,8 @@ workspace "hiprt"
             copydir( "./contrib/embree/win", "./dist/bin/Release/", "*.dll" )
             copydir( "./contrib/embree/win", "./dist/bin/Debug/", "*.dll" )
 			libdirs{"contrib/bin/win64"}
-            copydir( "./contrib/Orochi/contrib/bin/win64", "./dist/bin/Release/", "*.dll" )
-            copydir( "./contrib/Orochi/contrib/bin/win64", "./dist/bin/Debug/", "*.dll" )
+            copydir( "./contrib/bin/", "./dist/bin/Release/", "*.dll" )
+            copydir( "./contrib/bin/", "./dist/bin/Debug/", "*.dll" )
         end
         if os.istarget("linux") then
             libdirs{"contrib/embree/linux/"}
