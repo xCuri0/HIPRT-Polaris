@@ -1,5 +1,5 @@
 # HIPRT for Polaris
-This is the main repository for the source code for HIPRT. ```amd_comgr0505.dll```, ```hiprtc0505.dll``` and ```hiprtc-builtins0505.dll``` have been sourced from [HIP SDK 5.5](https://www.amd.com/amd/language-masters/en/developer/resources/rocm-hub/eula/licenses.html?filename=AMD-Software-PRO-Edition-23.Q3-Win10-Win11-For-HIP.exe), newer versions do not work correctly on Polaris
+This is the main repository for the source code for HIPRT. ```amd_comgr0505.dll```, ```hiprtc0505.dll``` and ```hiprtc-builtins0505.dll``` have been sourced from [HIP SDK 5.5](https://download.amd.com/developer/eula/rocm-hub/AMD-Software-PRO-Edition-23.Q3-Win10-Win11-For-HIP.exe), newer versions do not work correctly on Polaris
 
 **A few examples appear to not work correctly on Polaris GPUs for now and give incorrect output or driver timeout**
 
