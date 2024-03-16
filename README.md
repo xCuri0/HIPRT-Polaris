@@ -3,6 +3,9 @@ This is the main repository for the source code for HIPRT. ```amd_comgr0505.dll`
 
 **A few examples appear to not work correctly on Polaris GPUs for now and give incorrect output or driver timeout**
 
+
+### Download prebuilt from [Releases](https://github.com/xCuri0/HIPRT-Polaris/releases)
+
 ## Cloning and Building 
 Download and install [HIP SDK 5.5](https://www.amd.com/amd/language-masters/en/developer/resources/rocm-hub/eula/licenses.html?filename=AMD-Software-PRO-Edition-23.Q3-Win10-Win11-For-HIP.exe), make sure that `HIP_PATH` is set correctly after install. **You also need Perl installed and in PATH for `hipcc` used for precompiling bitcode to work.**
 
