@@ -110,23 +110,27 @@ function get_hip_sdk_verion()
             if string.sub(HIP_PATH, -1, -1) == '\\' or string.sub(HIP_PATH, -1, -1) == '/' then
                 HIP_PATH = string.sub(HIP_PATH, 1, -2)
             end
-			hipCommand = HIP_PATH..'\\'..hipCommand
+			hipCommand = HIP_PATH..'\\bin\\'..hipCommand
 		end
 	end
-	
+
 	tmpFile = os.tmpname ()
-	os.execute (hipCommand .. " --version > " .. tmpFile)
 	
-	local version
-	for line in io.lines (tmpFile) do
+	local hipCmd = string.format([==["%s" "--version"]==], hipCommand, monat)
+	hipCmd = '"'..hipCmd..'"'
+
+	local hipIo = io.popen(hipCmd)
+	
+	for line in hipIo:lines() do
 		print (line)
 		version =  string.sub(line, string.find(line, "%d.%d"))
 		break
 	end
+	hipIo:close()
 	os.remove (tmpFile)
 
     if version == nil or version == '' then
-        version = "5.5"
+        version = "HIP_SDK_NOT_FOUND"
     end
 
 	return version
@@ -272,7 +276,7 @@ workspace "hiprt"
             copydir( "./contrib/embree/win", "./dist/bin/Debug/", "*.dll" )
 			libdirs{"contrib/bin/win64"}
 			zip.extract("./contrib/bin/hiprtc505.zip", "./dist/bin/Release/")
-			zip.extract("./contrib/bin/hiprtc505.zip/", "./dist/bin/Debug/")
+			zip.extract("./contrib/bin/hiprtc505.zip", "./dist/bin/Debug/")
         end
         if os.istarget("linux") then
             libdirs{"contrib/embree/linux/"}

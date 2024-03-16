@@ -4,6 +4,7 @@ This is the main repository for the source code for HIPRT. ```amd_comgr0505.dll`
 **A few examples appear to not work correctly on Polaris GPUs for now and give incorrect output or driver timeout**
 
 ## Cloning and Building 
+Download and install [HIP SDK 5.5](https://www.amd.com/amd/language-masters/en/developer/resources/rocm-hub/eula/licenses.html?filename=AMD-Software-PRO-Edition-23.Q3-Win10-Win11-For-HIP.exe), make sure that `HIP_PATH` is set correctly after install.
 
 1. `git clone https://github.com/GPUOpen-LibrariesAndSDKs/HIPRT`
 2. `git submodule update --init --recursive`
@@ -29,7 +30,7 @@ Example: `..\dist\bin\Release\unittest64.exe --width=512 --height=512 --referenc
 ## Developing HIPRT
 
 ### Compiling Bundled Bitcode and Fatbinary 
-- Clone `hipSdk` repo to the root directory.
+- Make sure HIP SDK 5.5 is installed and HIP_PATH is set
 - Go to `scripts/bitcodes`, run `python compile.py` which uses `hipcc` from the `hipSdk` directory. (todo. make it more general, maybe search for `hipcc` from path, if it's not found, use the directory above or something like this)
 	- Note use python version 3.*+.
 	- Git bash shell is not supported for compile.py.

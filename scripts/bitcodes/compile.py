@@ -73,8 +73,9 @@ def compileAmd():
     if not isLinux():
         postfix = '_win.bc'
         if which('hipcc', 'bat') == None:
-            hipccpath = root + 'hipSdk\\bin\\hipcc'
-            
+            hipccpath = f'"{os.environ["HIP_PATH"]}bin\hipcc\"'
+            hipccpath = hipccpath.replace('\\','\\\\')
+
     cmd = hipccpath + ' --version'
     return_code = subprocess.call(cmd, shell=True)
     if return_code != 0:
