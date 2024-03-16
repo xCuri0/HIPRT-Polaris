@@ -7,8 +7,7 @@ This is the main repository for the source code for HIPRT. ```amd_comgr0505.dll`
 
 1. `git clone https://github.com/GPUOpen-LibrariesAndSDKs/HIPRT`
 2. `git submodule update --init --recursive`
-3. `git lfs fetch` (To get resources for running performance tests)
-4. `.\tools\premake5\win\premake5.exe vs2019`
+3. `.\tools\premake5\win\premake5.exe vs2019`
 
 ### Using Bitcode
 Add the option `--bitcode` to enable precompiled bitcode. 

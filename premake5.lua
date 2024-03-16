@@ -271,8 +271,8 @@ workspace "hiprt"
             copydir( "./contrib/embree/win", "./dist/bin/Release/", "*.dll" )
             copydir( "./contrib/embree/win", "./dist/bin/Debug/", "*.dll" )
 			libdirs{"contrib/bin/win64"}
-            copydir( "./contrib/bin/", "./dist/bin/Release/", "*.dll" )
-            copydir( "./contrib/bin/", "./dist/bin/Debug/", "*.dll" )
+			zip.extract("./contrib/bin/hiprtc505.zip", "./dist/bin/Release/")
+			zip.extract("./contrib/bin/hiprtc505.zip/", "./dist/bin/Debug/")
         end
         if os.istarget("linux") then
             libdirs{"contrib/embree/linux/"}
